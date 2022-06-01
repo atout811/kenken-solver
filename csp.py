@@ -19,3 +19,17 @@ class CSP():
             del assignment[var]
 
     
+    def count(self,seq):
+      
+        return sum(bool(x) for x in seq)
+
+
+    def nconflicts(self, var, val, assignment):
+        
+        def conflict(var2):
+            return (var2 in assignment and
+                    not self.constraints(var, val, var2, assignment[var2]))
+        return self.count(conflict(v) for v in self.neighbors[var])
+        
+    
+
