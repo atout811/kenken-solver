@@ -32,4 +32,14 @@ class CSP():
         return self.count(conflict(v) for v in self.neighbors[var])
         
     
-
+    def goal_test(self, state):
+        assignment = dict(state)
+        return (len(assignment) == len(self.variables)
+                and all(self.nconflicts(variables, assignment[variables], assignment) == 0
+                        for variables in self.variables))
+    
+    def support_pruning(self):
+        if self.curr_domains is None:
+            self.curr_domains = {v: list(self.domains[v]) for v in self.variables}
+    
+    
