@@ -10,6 +10,12 @@ class CSP():
         self.curr_domains = None
         self.nassigns = 0
     
+    def assign(self, var, val, assignment):
+        assignment[var] = val
+        self.nassigns += 1
     
+    def unassign(self, var, assignment):
+        if var in assignment:
+            del assignment[var]
 
-
+    
