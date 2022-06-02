@@ -60,3 +60,26 @@ class CSP():
         for B, b in removals:
             self.curr_domains[B].append(b)
 
+
+
+# return true if a solution is found and false otherwise
+def AC3(csp):
+    queue = [(x, y) for x in csp.variables for y in csp.neighbors[x]]
+    while queue:
+        x, y = queue.pop()
+        if revise(csp, x, y):
+            if not csp.domains[y]:
+                return False
+            for z in csp.neighbors[y]:
+                if z != x:
+                    queue.append((z, y))
+    return True
+
+# revise the domain of a variable if it is inconsistent with the constraint
+def revise(csp, x, y):
+    revised = False
+    for xi in csp.domains[x]:
+        if not any(csp.constraints(xi, y)):
+            csp.domains[x].remove(xi)
+            revised = True
+    return revised
