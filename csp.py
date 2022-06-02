@@ -43,3 +43,20 @@ class CSP():
             self.curr_domains = {v: list(self.domains[v]) for v in self.variables}
     
     
+    def suppose(self, var, value):
+        self.support_pruning()
+        removals = [(var, a) for a in self.curr_domains[var] if a != value]
+        self.curr_domains[var] = [value]
+        return removals
+    
+    def prune(self, var, value, removals):
+        self.curr_domains[var].remove(value)
+        if removals is not None:
+            removals.append((var, value))
+  
+    
+    def restore(self, removals):
+       
+        for B, b in removals:
+            self.curr_domains[B].append(b)
+
