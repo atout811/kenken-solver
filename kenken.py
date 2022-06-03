@@ -1,4 +1,4 @@
-csp as csp
+import csp
 # @ stderr: reporting errors
 from sys import stderr
 from itertools import product, permutations
