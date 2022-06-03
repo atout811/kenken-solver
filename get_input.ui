@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>582</width>
+    <height>467</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>260</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> font:16pt 3px solid  &quot;Lato&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Grid Size:</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>260</y>
+      <width>81</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:black; border: 3px solid black; 
+font: 14pt solid &quot;Lato&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>360</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> color: black; font:16pt 3px solid  &quot;Lato&quot;; </string>
+    </property>
+    <property name="text">
+     <string>Generate Puzzle</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>188</x>
+      <y>190</y>
+      <width>371</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> font:16pt 3px solid  &quot;Lato&quot;;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Back Tracking</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Back Tracking +MRV</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Forward Checking</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Forward Checking +MRV</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MAC</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>MIN CONFLICTS</string>
+     </property>
+    </item>
+    <!-- <item>
+     <property name="text">
+      <string>Backtracking with Forward Checking</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Backtracking with Arc Consistency</string>
+     </property>
+    </item> -->
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>190</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> font:16pt 3px solid  &quot;Lato&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Algorithm:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>40</y>
+      <width>241</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #F4F5F7</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>icon-small.png</pixmap>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
