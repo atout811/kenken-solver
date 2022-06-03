@@ -75,7 +75,7 @@ def AC3(csp):
                     queue.append((z, y))
     return True
 
-# revise the domain of a variable if it is inconsistent with the constraint
+
 def revise(csp, x, y):
     revised = False
     for xi in csp.domains[x]:
@@ -83,3 +83,26 @@ def revise(csp, x, y):
             csp.domains[x].remove(xi)
             revised = True
     return revised
+
+
+def no_inference(csp, var, value, assignment, removals):
+    return True
+
+def forward_checking(csp, var, value, assignment, removals):
+    
+    csp.support_pruning()
+
+    for B in csp.neighbors[var]:
+        if B not in assignment:
+            for b in csp.curr_domains[B][:]:
+                if not csp.constraints(var, value, B, b):
+                    csp.prune(B, b, removals)
+            if not csp.curr_domains[B]:
+                return False
+    return True
+
+
+def mac(csp, var, value, assignment, removals):
+    """Maintain arc consistency."""
+    return AC3(csp, [(X, var) for X in csp.neighbors[var]], removals)
+
